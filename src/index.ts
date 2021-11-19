@@ -438,30 +438,312 @@ async function setupPlugin(
     },
     isEnabled
   });
+  // My Changes
+commands.addCommand('center-cell-bottom', {
+    label: 'Center Cell',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+	    let er = current.content.activeCell.inputArea.node.getBoundingClientRect();
+	    current.content.scrollToPosition(er.bottom, 0);
+	}
+    },
+    isEnabled
+});
+
+
+	commands.addCommand('cursor-center', {
+    label: 'Center Cell',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+	    let er = current.content.activeCell.inputArea.node.getBoundingClientRect();
+	    
+	   const index = current.content.activeCellIndex;
+	    const child = current.content.widgets[index];
+	    const editor = child.editor;
+	    const selections = editor.getSelections();
+	    
+	    let cursor=editor.getOffsetAt(selections[0].start);
+	    current.content.scrollToPosition(er.top+(cursor/2)+60, 0);
+	}
+    },
+    isEnabled
+});
+
+
+
+		commands.addCommand('cursor-top', {
+    label: 'cursor to bottom',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+	    let er = current.content.activeCell.inputArea.node.getBoundingClientRect();
+	    
+	   const index = current.content.activeCellIndex;
+	    const child = current.content.widgets[index];
+	    const editor = child.editor;
+	    const selections = editor.getSelections();
+	    
+	    let cursor=editor.getOffsetAt(selections[0].start);
+	    current.content.scrollToPosition(er.top+(cursor/2)+460, 0);
+	}
+    },
+    isEnabled
+});
+			commands.addCommand('cursor-bottom', {
+    label: 'cursor to bottom',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+	    let er = current.content.activeCell.inputArea.node.getBoundingClientRect();
+	    
+	   const index = current.content.activeCellIndex;
+	    const child = current.content.widgets[index];
+	    const editor = child.editor;
+	    const selections = editor.getSelections();
+	    
+	    let cursor=editor.getOffsetAt(selections[0].start);
+	    current.content.scrollToPosition(er.top+(cursor/2)-340, 0);
+	}
+    },
+    isEnabled
+});
+
+
+commands.addCommand('scroll_d20', {
+    label: 'scroll down 20',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 20;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u20', {
+    label: 'scroll up 20',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 20;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_d40', {
+    label: 'scroll down 40',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 40;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u40', {
+    label: 'scroll up 40',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 40;
+	}
+    },
+    isEnabled
+});
+
+	commands.addCommand('scroll_d60', {
+    label: 'scroll down 60',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 60;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u60', {
+    label: 'scroll up 60',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 60;
+	}
+    },
+    isEnabled
+});
+
+commands.addCommand('scroll_d80', {
+    label: 'scroll down 80',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 80;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u80', {
+    label: 'scroll up 80',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 80;
+	}
+    },
+    isEnabled
+});
+
+	commands.addCommand('scroll_d120', {
+    label: 'scroll down 120',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 120;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u120', {
+    label: 'scroll up 120',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 120;
+	}
+    },
+    isEnabled
+});
+	 commands.addCommand('scroll_d150', {
+    label: 'scroll down 150',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 150;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u150', {
+    label: 'scroll up 150',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 150;
+	}
+    },
+    isEnabled
+});
+
+		 commands.addCommand('scroll_d250', {
+    label: 'scroll down 250',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 250;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u250', {
+    label: 'scroll up 250',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 250;
+	}
+    },
+    isEnabled
+});
+		 commands.addCommand('scroll_d300', {
+    label: 'scroll down 300',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 300;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u300', {
+    label: 'scroll up 300',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 300;
+	}
+    },
+    isEnabled
+});
+
+		 commands.addCommand('scroll_d400', {
+    label: 'scroll down 400',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop += 400;
+	}
+    },
+    isEnabled
+});
+	commands.addCommand('scroll_u400', {
+    label: 'scroll up 400',
+    execute: args => {
+	const current = getCurrent(args);
+
+	if (current && current.content.activeCell != null) {
+		      current.content.node.scrollTop -= 400;
+	}
+    },
+    isEnabled
+});
+
+
 
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'U'],
+    keys: [' Ctrl T', 'U'],
     command: 'notebook:undo-cell-action'
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', '-'],
+    keys: [' Ctrl T', '-'],
     command: 'notebook:split-cell-at-cursor'
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'D'],
+    keys: [' Ctrl T', 'D'],
     command: 'cut-cell-and-edit'
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'Y'],
+    keys: [' Ctrl T', 'Y'],
     command: 'copy-cell-and-edit'
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'P'],
+    keys: [' Ctrl T', 'P'],
     command: 'paste-cell-and-edit'
   });
   commands.addKeyBinding({
@@ -487,17 +769,17 @@ async function setupPlugin(
   // this one doesn't work yet
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'Shift O'],
+    keys: ['Ctrl T', 'Shift O'],
     command: 'notebook:insert-cell-above'
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'Ctrl O'],
+    keys: ['Ctrl T', 'Ctrl T'],
     command: 'notebook:insert-cell-above'
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'O'],
+    keys: ['Ctrl T', 'O'],
     command: 'notebook:insert-cell-below'
   });
   commands.addKeyBinding({
@@ -562,12 +844,12 @@ async function setupPlugin(
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'G'],
+    keys: ['Ctrl T', 'G'],
     command: 'select-first-cell'
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'Ctrl G'],
+    keys: ['Ctrl T', 'Ctrl G'],
     command: 'select-last-cell'
   });
   commands.addKeyBinding({
@@ -652,7 +934,7 @@ async function setupPlugin(
   });
   commands.addKeyBinding({
     selector: '.jp-Notebook.jp-mod-editMode',
-    keys: ['Ctrl O', 'Z', 'Z'],
+    keys: ['Ctrl T', 'Z', 'Z'],
     command: 'center-cell'
   });
   commands.addKeyBinding({
